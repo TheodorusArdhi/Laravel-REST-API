@@ -1,0 +1,124 @@
+### Register User API
+POST http://localhost:8000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username" : "larry",
+    "password": "passlarry",
+    "name": "Larry Aja"
+}
+
+### Login User API
+POST http://localhost:8000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "larry",
+    "password": "passlarry"
+}
+
+### Get Current User API
+GET http://localhost:8000/api/users/current
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+### Update Current User API
+PATCH http://localhost:8000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+{
+    "name" : "seperti larry"
+}
+
+### Logout User API
+DELETE http://localhost:8000/api/users/logout
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+### Create Contact API
+POST http://localhost:8000/api/contacts
+Content-Type: application/json
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+{
+    "first_name" : "test_first_name",
+    "last_name" : "test last_name",
+    "email" : "test_email@gmail.com",
+    "phone" : "08111111"
+}
+
+### Get Contact API 
+GET http://localhost:8000/api/contacts/2885
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+### Update Contact API
+PUT http://localhost:8000/api/contacts/2885
+Accept: application/json
+Content-Type: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+{
+    "first_name" : "update first_name",
+    "last_name" : "update last_name",
+    "email" : "update_email@gmail.com",
+    "phone" : "08111122"
+}
+
+### Delete Contact API 
+DELETE http://localhost:8000/api/contacts/2884
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+### Search Contact API
+GET http://localhost:8000/api/contacts?email=test_email
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+### Create Address API 
+POST http://localhost:8000/api/contacts/2885/addresses
+Accept: application/json
+Content-Type: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+{
+    "street" : "test street",
+    "city" : "test city",
+    "province" : "test province",
+    "country" : "test country",
+    "postal_code" : "55678"
+}
+
+### Get Address API 
+GET http://localhost:8000/api/contacts/2885/addresses/190
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+### Update Address API #25
+PUT http://localhost:8000/api/contacts/2885/addresses/190
+Accept: application/json
+Content-Type: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+{
+    "street" : "update street",
+    "city" : "update city",
+    "province" : "update province",
+    "country" : "update country",
+    "postal_code" : "55689"
+}
+
+### Remove Address API #24
+DELETE http://localhost:8000/api/contacts/250/addresses/24
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
+
+### List Address API
+GET http://localhost:8000/api/contacts/2885/addresses
+Accept: application/json
+Authorization: da21768f-2b59-4b57-aa8f-8bdd5809c939
